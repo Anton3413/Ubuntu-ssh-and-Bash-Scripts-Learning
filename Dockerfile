@@ -25,7 +25,7 @@ RUN mkdir -p /home/denis/.ssh
 # They are under ~/.ssh directory by default.
 COPY id_rsa.pub /home/denis/.ssh/authorized_keys
 # change ownership of the key file.
-RUN chown denis /home/denis/.ssh/authorized_keys && chgrp dmdev /home/denis/.ssh/authorized_keys && chmod 640 /home/denis/.ssh/authorized_keys
+RUN chown denis /home/denis/.ssh/authorized_keys && chgrp test_group /home/denis/.ssh/authorized_keys && chmod 640 /home/denis/.ssh/authorized_keys
 
 ##########################################################
 # Start SSH service
