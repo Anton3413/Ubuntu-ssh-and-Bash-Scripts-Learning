@@ -1,5 +1,6 @@
 FROM ubuntu:latest
 
+USER root
 ##########################################################
 # Install openssh-server
 RUN apt update && apt install openssh-server sudo -y
