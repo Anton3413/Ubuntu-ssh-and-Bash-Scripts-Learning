@@ -1,19 +1,18 @@
-FROM ubuntu:latest
+FROM ubuntu:20.04
 
-USER root
 ##########################################################
 # Install openssh-server
-RUN apt update && apt install openssh-server sudo -y
+RUN apt-get update && apt-get install -y openssh-server sudo
 
 ##########################################################
-# Create a group “test_group”
-RUN groupadd test_group
+# Create a group “dmdev”
+RUN groupadd dmdev
 
 ##########################################################
-# Create a user “test_user”
-RUN useradd -d /home/test_user -m -s /bin/bash -g test_group test_user
+# Create a user “ivan”
+RUN useradd -d /home/ivan -m -s /bin/bash -g dmdev ivan
 # Set default password 123 for user ivan
-RUN echo "123\n123" | passwd test_user
+RUN echo "123\n123" | passwd ivan
 
 ##########################################################
 # Create a user “denis”
@@ -25,7 +24,7 @@ RUN mkdir -p /home/denis/.ssh
 # They are under ~/.ssh directory by default.
 COPY id_rsa.pub /home/denis/.ssh/authorized_keys
 # change ownership of the key file.
-RUN chown denis /home/denis/.ssh/authorized_keys && chgrp test_group /home/denis/.ssh/authorized_keys && chmod 640 /home/denis/.ssh/authorized_keys
+RUN chown denis /home/denis/.ssh/authorized_keys && chgrp dmdev /home/denis/.ssh/authorized_keys && chmod 640 /home/denis/.ssh/authorized_keys
 
 ##########################################################
 # Start SSH service
