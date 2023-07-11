@@ -1,1 +1,1 @@
-# ubuntu-ssh-test
+# Ubuntu-ssh-test and some bash scripts

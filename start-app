@@ -2,4 +2,21 @@
 
 echo "Hello from my first bash script"!
 
+echo "This is our test array"
+array=(12 10 45 22 7 4)
+echo "${array[@]}"
 
+echo "array size is : ${#array[@]}"
+
+echo "we want to change first array index!"
+echo "Enter new index value"
+read new_value
+array[0]=${new_value}
+echo "now first index of array is: ${array[0]}"
+echo "new array is: ${array[*]}"
+
+echo "Now, we want to add value to our array Enter some number!"
+read number
+
+array+=(${number})
+echo "Well done! now our array is ${array[*]}"
