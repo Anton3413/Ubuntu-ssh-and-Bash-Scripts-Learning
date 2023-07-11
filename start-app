@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Hello from my first bash script"!
+echo "Hello from my test bash script"!
 
 echo "This is our test array"
 array=(12 10 45 22 7 4)

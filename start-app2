@@ -1,0 +1,45 @@
+#!/bin/bash
+
+#Else-if
+read -p "Enter a number: " digit
+
+if [[ ${digit} =~ ^[0-9]+$ ]]; then
+  if (( ${digit} > 0 )); then
+    echo "${digit} is a positive number"
+  elif (( ${digit} < 0 )); then
+    echo "${digit} is a negative number"
+  else
+    echo "${digit} is a zero"
+  fi
+else
+  echo "What's wrong with you? It's not a number!!"
+fi
+
+###Switch-case
+
+echo "Enter any command"
+read command
+
+case "${command}" in
+ls)
+  echo "Your command is ls"
+  ;;
+pwd)
+  echo "Your command is pwd"
+  ;;
+cd)
+  echo "Your command is cd"
+  ;;
+cp)
+  echo "Your command is cp"
+  ;;
+rm)
+  echo "Your command is rm"
+  ;;
+mv)
+  echo "Your command is mv"
+  ;;
+*)
+  echo "Unknown command"
+  exit 1
+esac
