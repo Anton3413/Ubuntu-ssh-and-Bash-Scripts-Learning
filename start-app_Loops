@@ -1,2 +1,32 @@
 #!/bin/bash
 
+### while
+
+read -p "Enter some number for while-loop(recommend 1-10)" while_number
+
+while (( while_number >= 0 )) ; do
+  echo "While number = ${while_number} "
+  (( while_number-- ))
+done
+
+until_number=15
+
+until (( until_number < 0)) ; do
+  echo "Until number = ${until_number} "
+  (( until_number-- ))
+done
+
+## for-loop
+array=(12 42 56 780 11 4 9 0 12 45 21 2)
+
+for((i = 0; i != ${#array[@]}; i++ )) ; do
+
+  echo "Index value = ${i}, Array value = ${array[i]} "
+
+done
+
+##for-each loop
+
+for value in "${array[@]}" ; do
+  echo " For each loop, array value = ${value}"
+done
