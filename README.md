@@ -1,1 +1,1 @@
-# Ubuntu-ssh-test and some bash scripts
+# Core bash scripts learning
